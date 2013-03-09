@@ -170,7 +170,7 @@ class Segment implements RouteInterface
 
                     $levelParts[$level][] = array('translated-parameter', $matches['name']);
                 } else {
-                    if (!preg_match('(\G(?P<name>[^:/{\[\]]+)(?:{(?P<delimiters>[^}]+)})?:?)', $def, $matches, 0, $currentPos)) {
+                    if (!preg_match('(\G(?P<name>[^:/.{\[\]]+)(?:{(?P<delimiters>[^}]+)})?:?)', $def, $matches, 0, $currentPos)) {
                         throw new Exception\RuntimeException('Found empty parameter name');
                     }
 
